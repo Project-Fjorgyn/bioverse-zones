@@ -18,5 +18,13 @@ RUN pip install jupyterlab \
 		seaborn \
 		click
 
+RUN apt-get -y install libpq-dev
+RUN pip install psycopg2 \
+		sqlalchemy
+
 # add git, vim and curl
 RUN apt-get -y install git
+
+RUN pip install h3 \
+		colour \
+		folium
