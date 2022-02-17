@@ -1,0 +1,15 @@
+version: "3"
+services:
+  postgis_server:
+    container_name: postgis_server
+    image: postgis/postgis
+    ports:
+      - "5432:5432"
+    volumes: 
+      - ~/db/reconnect/postgresql/data:/var/lib/postgresql/data
+    networks: 
+      - net 
+    environment:
+      - "POSTGRES_PASSWORD=reconnect"
+networks: 
+  net:
